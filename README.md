@@ -61,8 +61,8 @@ sh test.sh
 |S-GTR| ST+MJ |[OneDrive]() [BaiduYun]()(key: ) |95.8 | 94.1 | 96.8 | 87.9|84.6| 92.3 |
 |S-GTR| ST+MJ+R |[OneDrive]() [BaiduYun]()(key: )  |97.5 |95.8 |97.8 |90.6 |87.3 |94.7|
 
-### Evalution S-GTR with different settings  
-* investigate  the  impact  of  different  modulesin  S-GTR, 
+### Evaluate S-GTR with different settings  
+* Investigate  the  impact  of  different  modules in  S-GTR. 
 
 |VRM|LM|GTR| IIIT5K | SVT  | IC13 | SVTP  | IC15 |  CUTE  |
 |:------:|:------:|:------: |:------:|:-----:|:----------:|:----:|:-----:|:------:|
@@ -70,8 +70,8 @@ sh test.sh
 |√ |√ | |94.2 |90.8 |93.6 |84.3 |82.0 |87.6|
 |√ | |√ |94.0 |91.2 |94.8 |85.0 |82.8 |88.4 |
 |√ |√ |√ | 95.1 |93.2 |95.9 |86.2 |84.1 |91.3|
-### Plug in different STR baselines 
- * Directly use word embedding from the pre-trained LM during training and inference.
+### Plugging GTR in different STR baselines 
+ *  Plug GTR module into four representative types of STR methods.
 
 |Methods| IIIT5K | SVT  | IC13 | SVTP  | IC15 |  CUTE  |
 |:------:|:------:|:-----:|:---------:|:----------:|:----:|:-----:|
