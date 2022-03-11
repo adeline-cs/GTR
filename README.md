@@ -57,9 +57,9 @@ sh test.sh
 
 |Methods |TrainData|     Checkpoint  | IIIT5K | SVT  | IC13 | SVTP  | IC15 |  CUTE  |
 |:--------:|:--------:|:-----------------:|:------:|:----------:|:--------:|:------:|:----------:|:---:|
-|SegBaseline| ST+MJ |[OneDrive]()() [BaiduYun]()(key: )  |94.2 |90.8 |93.6 |84.3 |82.0 |87.6|
-|S-GTR| ST+MJ |[OneDrive]() [BaiduYun]()(key: ) |95.8 | 94.1 | 96.8 | 87.9|84.6| 92.3 |
-|S-GTR| ST+MJ+R |[OneDrive]() [BaiduYun]()(key: )  |97.5 |95.8 |97.8 |90.6 |87.3 |94.7|
+|SegBaseline| ST+MJ |[OneDrive]()(soon update) [BaiduYun]()(soon update)  |94.2 |90.8 |93.6 |84.3 |82.0 |87.6|
+|S-GTR| ST+MJ |[OneDrive]()(soon update) [BaiduYun]()(soon update) |95.8 | 94.1 | 96.8 | 87.9|84.6| 92.3 |
+|S-GTR| ST+MJ+R |[OneDrive]()(soon update) [BaiduYun]()(soon update)  |97.5 |95.8 |97.8 |90.6 |87.3 |94.7|
 
 ### Evaluate S-GTR with different settings  
 - Investigate  the  impact  of  different  modules in  S-GTR.
@@ -89,51 +89,15 @@ sh test.sh
 
 2. This code is only for S-GTR, and other pluggin models will be updated soon. 
 
-   
+3. To facilitate interested workers to use our model to adapt to other language training, we will provide text guidance in README for other language recognition as soon as possible.
 
 ## Citation
 ```
-@article{shi2016end,
-  title={An end-to-end trainable neural network for image-based sequence recognition and its application to scene text recognition},
-  author={Shi, Baoguang and Bai, Xiang and Yao, Cong},
-  journal={IEEE Transactions on Pattern Analysis and Machine Intelligence},
-  volume={39},
-  number={11},
-  pages={2298--2304},
-  year={2016},
-  publisher={IEEE}
-}
-
-@inproceedings{yan2021primitive,
-  title={Primitive Representation Learning for Scene Text Recognition},
-  author={Yan, Ruijie and Peng, Liangrui and Xiao, Shanyu and Yao, Gang},
-  booktitle={Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition},
-  pages={284--293},
+@article{he2021visual,
+  title={Visual Semantics Allow for Textual Reasoning Better in Scene Text Recognition},
+  author={He, Yue and Chen, Chen and Zhang, Jing and Liu, Juhua and He, Fengxiang and Wang, Chaoyue and Du, Bo},
+  journal={arXiv preprint arXiv:2112.12916},
   year={2021}
 }
 
-@inproceedings{baek2019wrong,
-  title={What is wrong with scene text recognition model comparisons? dataset and model analysis},
-  author={Baek, Jeonghun and Kim, Geewook and Lee, Junyeop and Park, Sungrae and Han, Dongyoon and Yun, Sangdoo and Oh, Seong Joon and Lee, Hwalsuk},
-  booktitle={Proceedings of the IEEE/CVF International Conference on Computer Vision},
-  pages={4715--4723},
-  year={2019}
-}
-
-@inproceedings{yu2020towards,
-  title={Towards accurate scene text recognition with semantic reasoning networks},
-  author={Yu, Deli and Li, Xuan and Zhang, Chengquan and Liu, Tao and Han, Junyu and Liu, Jingtuo and Ding, Errui},
-  booktitle={Proceedings of the IEEE Conference on Computer Vision and Pattern Recognition},
-  pages={12113--12122},
-  year={2020},
-  publisher={IEEE},
-  address ={Seattle, WA, USA}
-}
-
-@article{fang2021read,
-  title={Read Like Humans: Autonomous, Bidirectional and Iterative Language Modeling for Scene Text Recognition},
-  author={Fang, Shancheng and Xie, Hongtao and Wang, Yuxin and Mao, Zhendong and Zhang, Yongdong},
-  journal={arXiv preprint arXiv:2103.06495},
-  year={2021}
-}
 ```
