@@ -3,7 +3,6 @@
 ## Introduction
 This is the official implementation of the AAAI 22 accepted paper : Visual Semantics Allow for Textual Reasoning Better in Scene Text Recognition. [paper](https://arxiv.org/abs/2112.12916) 
 
-[comment]: <> "This code is based on the [aster.pytorch]&#40;https://github.com/ayumiymk/aster.pytorch&#41;, we sincerely thank ayumiymk for his awesome repo and help."
 
 ## Abstract
 Existing Scene Text Recognition (STR) methods typically use a language model to optimize the joint probability of the 1D character sequence predicted by a visual recognition (VR) model, which ignore the 2D spatial context of visual semantics within and between character instances, making them not generalize well to arbitrary shape scene text. To address this issue, we make the first attempt to perform textual reasoning based on visual semantics in this paper. Technically, given the character segmentation maps predicted by a VR model, we construct a subgraph for each instance, where nodes represent the pixels in it and edges are added between nodes based on their spatial similarity. Then, these subgraphs are sequentially connected by their root nodes and merged into a complete graph. Based on this graph, we devise a graph convolutional network for textual reasoning (GTR) by supervising it with a cross-entropy loss. GTR can be easily plugged in representative STR models to improve their performance owing to better textual reasoning. Specifically, we construct our model, namely S-GTR, by paralleling GTR to the language model in a segmentation-based STR baseline,
@@ -33,8 +32,9 @@ Details can be found in requirements.txt
 
 ### Train
 ##### Prepare your data
--  Download the  training set (bin) from [here(soon update)]()
-- Download the pretrained Seg-baseline visual recognition model (bin) from [here(soon update)]()
+-  Download the training set from 
+   Synthesis training dataset: [Baidu](https://pan.baidu.com/s/1uSW0exS_Uaoeo5OJaVkEmQ )(key:c83d) and Real training dataset[Baidu](https://pan.baidu.com/s/1ea76PgR_Dt984Z4DnkaRfA)(key:datm)
+- Download the pretrained Seg-baseline visual recognition model from here(soon update)
 - Update the path in the lib/tools/create_all_synth_lmdb.py
 - Run the lib/tools/create_all_synth_lmdb.py
 - Note: it may result in large storage space, you can modify the datasets/dataset.py to generate the word embedding in an online way
@@ -53,13 +53,13 @@ sh test.sh
 
 ## Experiments
 ### Evaluation results on benchmarks
-* You can downlod the benchmark datasets from [BaiduYun](https://pan.baidu.com/s/1Z4aI1_B7Qwg9kVECK0ucrQ) (key: nphk) shared by clovaai in this [repo](https://github.com/clovaai/deep-text-recognition-benchmark).
+* You can downlod the benchmark datasets from [OneDrive](https://drive.google.com/file/d/1ws4SmBBvT6cxs41TfSUpe4uhR_U_AzMk/view?usp=sharing).
 
 |Methods |TrainData|     Checkpoint  | IIIT5K | SVT  | IC13 | SVTP  | IC15 |  CUTE  |
 |:--------:|:--------:|:-----------------:|:------:|:----------:|:--------:|:------:|:----------:|:---:|
-|SegBaseline| ST+MJ |[OneDrive]()(soon update) [BaiduYun]()(soon update)  |94.2 |90.8 |93.6 |84.3 |82.0 |87.6|
-|S-GTR| ST+MJ |[OneDrive]()(soon update) [BaiduYun]()(soon update) |95.8 | 94.1 | 96.8 | 87.9|84.6| 92.3 |
-|S-GTR| ST+MJ+R |[OneDrive]()(soon update) [BaiduYun]()(soon update)  |97.5 |95.8 |97.8 |90.6 |87.3 |94.7|
+|SegBaseline| ST+MJ | OneDrive(soon update)  |94.2 |90.8 |93.6 |84.3 |82.0 |87.6|
+|S-GTR| ST+MJ | OneDrive(soon update)  |95.8 | 94.1 | 96.8 | 87.9|84.6| 92.3 |
+|S-GTR| ST+MJ+R |OneDrive](soon update)   |97.5 |95.8 |97.8 |90.6 |87.3 |94.7|
 
 ### Evaluate S-GTR with different settings  
 - Investigate  the  impact  of  different  modules in  S-GTR.
@@ -85,7 +85,7 @@ sh test.sh
 
 
 ### Issue
-1. The pretrain model will be uploaded  and the training code for MT adative framework will be updated soon.
+1. The train and test datasets are uploaded. The pretrain model will be uploaded  and the training code for MT adative framework will be updated soon.
 
 2. This code is only for S-GTR, and other pluggin models will be updated soon. 
 
