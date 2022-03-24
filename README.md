@@ -84,7 +84,7 @@ sh test.sh
 
 
 
-### Issue
+## Issue
 1. The train and test datasets are uploaded. The pretrain model will be uploaded  and the training code for MT adative framework will be updated soon.
 
 2. This code is only for S-GTR, and other pluggin models will be updated soon. 
@@ -92,12 +92,17 @@ sh test.sh
 3. To facilitate interested workers to use our model to adapt to other language training, we will provide text guidance in README for other language recognition as soon as possible.
 
 ## Citation
+Please consider citing this paper if you find it useful in your research. 
 ```
 @article{he2021visual,
   title={Visual Semantics Allow for Textual Reasoning Better in Scene Text Recognition},
   author={He, Yue and Chen, Chen and Zhang, Jing and Liu, Juhua and He, Fengxiang and Wang, Chaoyue and Du, Bo},
-  journal={arXiv preprint arXiv:2112.12916},
-  year={2021}
+  booktitle={Proceedings of the AAAI Conference on Artificial Intelligence},
+  volume={36},
+  year={2022}
 }
 
 ```
+
+## Copyright
+For research purpose usage only.

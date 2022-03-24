@@ -8,9 +8,10 @@ import numpy as np
 from random import randint
 from PIL import Image
 import sys
-from . import evaluation_metrics
-from .evaluation_metrics  import
+from . import metric
+from metric import Accuracy, EditDistance, RecPostProcess
 from tqdm import tqdm
+
 class BaseEvaluator(object):
     def __init__(self, model, metric, use_cuda = True):
         super(BaseEvaluator, self).__init__()
@@ -22,8 +23,8 @@ class BaseEvaluator(object):
 
     def evaluate(self, data_loader, step = 1, print_freq =1, tfLogger = None, dataset = None, vis_dir = None):
         self.model.eval()
-        batch_time =
-        data_time =
+        # batch_time =
+        # data_time =
 
         # forward the network
         image, outputs, targets, embeds, losses = [], {}, [], [], []

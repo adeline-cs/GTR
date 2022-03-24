@@ -39,8 +39,8 @@ class RecognitionCrossEntropyLoss(nn.Module):
 
 class CharSegmentLoss(nn.Module):
     
-    def __init__(self, in_channels=256, voc_type, inner_channels=256, training=False)
-        super(CharSegmentLoss, self).__init__():
+    def __init__(self, voc_type, in_channels=256, inner_channels=256, training=False):
+        super(CharSegmentLoss, self).__init__()
 
 	self.mask = nn.Sequential(
                 nn.Conv2d(in_channels, inner_channels, kernel_size=3, padding=1),
@@ -117,9 +117,6 @@ class SequenceCrossEntropyLoss(nn.Module):
 
     return output
 
-
-
-
 class MaskL1Loss(nn.Module):
     def __init__(self):
         super(MaskL1Loss, self).__init__()
@@ -127,7 +124,6 @@ class MaskL1Loss(nn.Module):
     def forward(self, pred: torch.Tensor, gt, mask):
         loss = (torch.abs(pred[:, 0] - gt) * mask).sum() / mask.sum()
         return loss, dict(l1_loss=loss)
-
 
 class BalanceL1Loss(nn.Module):
     def __init__(self, negative_ratio=3.):
@@ -153,7 +149,6 @@ class BalanceL1Loss(nn.Module):
         positive_loss = positive.sum() / positive_count
         return positive_loss + negative_loss,\
             dict(l1_loss=positive_loss, nge_l1_loss=negative_loss)
-
 
 class SmoothL1loss(nn.Module):
     def __init__(self):

@@ -9,8 +9,8 @@ import torch
 from torchvision import transforms
 from fvcore.nn import FlopCountAnalysis, flop_count_table
 from . import  evaluation_metrics
-from evaluation_metrics import
-from .utils import
+from . import metric
+from metric import Accuracy, EditDistance, RecPostProcess
 from ..config import get_args
 global_args = get_args(sys.argv[1:])
 
@@ -29,9 +29,9 @@ class BaseTrainer(object):
     def train(self, epoch, data_loader, optimizer, current_lr = 0.0, print_freq = 100, train_tfLogger = None,
               evaluation = None, test_loader = None, eval_tfLogger = None, test_dataset = None, test_freq = 1000):
         self.model.train()
-        batch_time =
-        data_time =
-        losses =
+        # batch_time =
+        # data_time =
+        losses = {}
         end = time.time()
         for i, input in enumerate(data_loader):
             self.model.train()
@@ -83,7 +83,7 @@ class BaseTrainer(object):
                     step = epoch * len(data_loader) + (i + 1)
                     info = {
                         "lr": current_lr,
-                        'loss': total_loss.item(), # this is total loss
+                        'loss': total_loss.item(),} # this is total loss
                     # add each loss
                     for k, loss in loss_dict.items():
                         info[k] = loss
@@ -148,7 +148,7 @@ class Trainer(BaseTrainer):
     def _forward(self, input_dict):
         self.model.train()
         output_dict = self.model(input_dict)
-        print('Flops counting', flop_count_table(flops=FlopCountAnalysis(self.model, input_dict))))
+        print('Flops counting', flop_count_table(flops=FlopCountAnalysis(self.model, input_dict)))
         return output_dict
 
 

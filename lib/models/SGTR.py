@@ -1,7 +1,7 @@
 from __future__ import absolute_import
 import sys
 import torch
-from torch.nn as nn
+import torch.nn as nn
 
 from .backbone import Backbone
 from .VisualRecognition import VisualRecognitionModule
