@@ -91,7 +91,7 @@ sh test.sh
 
 3. To facilitate interested workers to use our model to adapt to other language training, we will provide text guidance in README for other language recognition as soon as possible.
 
-4.We will update the details of the visual recognition model and provide guidance code to generate relevant feature maps for the question in issue.
+4. We will update the details of the visual recognition model and provide guidance code to generate relevant feature maps for the question in issue.
 
 ## Citation
 Please consider citing this paper if you find it useful in your research. 
