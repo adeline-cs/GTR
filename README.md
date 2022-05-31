@@ -57,7 +57,7 @@ sh test.sh
 
 |Methods |TrainData|     Checkpoint  | IIIT5K | SVT  | IC13 | SVTP  | IC15 |  CUTE  |
 |:--------:|:--------:|:-----------------:|:------:|:----------:|:--------:|:------:|:----------:|:---:|
-|SegBaseline| ST+MJ | OneDrive(soon update)  |94.2 |90.8 |93.6 |84.3 |82.0 |87.6|
+|SegBaseline| ST+MJ | [OneDrive](https://drive.google.com/file/d/1ws4SmBBvT6cxs41TfSUpe4uhR_U_AzMk/view?usp=sharing)  |94.2 |90.8 |93.6 |84.3 |82.0 |87.6|
 |S-GTR| ST+MJ | OneDrive(soon update)  |95.8 | 94.1 | 96.8 | 87.9|84.6| 92.3 |
 |S-GTR| ST+MJ+R |OneDrive](soon update)   |97.5 |95.8 |97.8 |90.6 |87.3 |94.7|
 
