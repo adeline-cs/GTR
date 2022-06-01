@@ -55,10 +55,10 @@ sh test.sh
 ### Evaluation results on benchmarks
 * You can downlod the benchmark datasets from [OneDrive](https://drive.google.com/file/d/1ws4SmBBvT6cxs41TfSUpe4uhR_U_AzMk/view?usp=sharing).
 
-|Methods |TrainData|     Checkpoint  | IIIT5K | SVT  | IC13 | SVTP  | IC15 |  CUTE  |
+|Methods |TrainData|  model | IIIT5K | SVT  | IC13 | SVTP  | IC15 |  CUTE  |
 |:--------:|:--------:|:-----------------:|:------:|:----------:|:--------:|:------:|:----------:|:---:|
-|SegBaseline| ST+MJ | [OneDrive](https://drive.google.com/file/d/1ws4SmBBvT6cxs41TfSUpe4uhR_U_AzMk/view?usp=sharing)  |94.2 |90.8 |93.6 |84.3 |82.0 |87.6|
-|S-GTR| ST+MJ | OneDrive(soon update)  |95.8 | 94.1 | 96.8 | 87.9|84.6| 92.3 |
+|SegBaseline| ST+MJ | [googleDrive](https://drive.google.com/file/d/1vGwF3cWqe6KrKJVqOZhlAyPEPXMSzxDh/view?usp=sharing)  |94.2 |90.8 |93.6 |84.3 |82.0 |87.6|
+|S-GTR| ST+MJ | [googleDrive](https://drive.google.com/file/d/1KIth2T_w_0VaRxTfavaFphNiHEVNBX0T/view?usp=sharing)  |95.8 | 94.1 | 96.8 | 87.9|84.6| 92.3 |
 |S-GTR| ST+MJ+R |OneDrive](soon update)   |97.5 |95.8 |97.8 |90.6 |87.3 |94.7|
 
 ### Evaluate S-GTR with different settings  
@@ -74,20 +74,89 @@ sh test.sh
 ### Plugging GTR in different STR baselines 
 - Plug GTR module into four representative types of STR methods.
 
-|Methods| IIIT5K | SVT  | IC13 | SVTP  | IC15 |  CUTE  |
-|:------:|:------:|:-----:|:---------:|:----------:|:----:|:-----:|
-|GTR+CRNN|  87.6 | 82.1 | 90.1 | 68.1 | 68.2 | 78.1   |
-|GTR+TRBA|93.2 | 90.1 | 94.0 | 80.7 | 76.0 | 82.1|
-|GTR+SRN| 96.0 | 93.1 | 96.1 | 87.9 | 83.9 | 90.7 |
-|GTR+PRENBaseline| 96.1 | 94.1 | 96.6 | 88.0 | 85.3 | 92.6|
-|GTR+ABINet-LV| 96.8 | 94.8  | 97.7  | 89.6   | 86.9  | 93.1   |
+|Methods|model| IIIT5K | SVT  | IC13 | SVTP  | IC15 |  CUTE  |
+|:------:|:------:|:------:|:-----:|:---------:|:----------:|:----:|:-----:|
+|GTR+CRNN|[googleDrive](https://drive.google.com/drive/folders/16Q_1OQdd0XKOBB1EK1VBb7Xxe27Jypjh?usp=sharing)|  87.6 | 82.1 | 90.1 | 68.1 | 68.2 | 78.1   |
+|GTR+TRBA|[googleDrive](https://drive.google.com/drive/folders/15WPsuPJDCzhp2SvYZLRj8mAlT3zmoAMW)|93.2 | 90.1 | 94.0 | 80.7 | 76.0 | 82.1|
+|GTR+SRN|[googleDrive](https://drive.google.com/file/d/1ep-taPjrWFx18fE-urWNd3oiuWUBXdUX/view?usp=sharing)| 96.0 | 93.1 | 96.1 | 87.9 | 83.9 | 90.7 |
+|GTR+PRENBaseline|[googleDrive](https://drive.google.com/file/d/1T3OfY1lfzDoYsZpPOwNpYWpYCOizV7bF/view?usp=sharing)| 96.1 | 94.1 | 96.6 | 88.0 | 85.3 | 92.6|
+|GTR+ABINet-LV|OneDrive(soon update)| 96.8 | 94.8  | 97.7  | 89.6   | 86.9  | 93.1   |
 
+
+1. Train GTR + CRNN model
+```
+python GTR-plug/GTR-CRNN/train.py \
+--train_data data_lmdb_release/training --valid_data data_lmdb_release/validation \
+--select_data MJ-ST --batch_ratio 0.5-0.5 \
+--Transformation None --FeatureExtraction VGG --SequenceModeling BiLSTM --Prediction CTC
+--add_GTR True
+```
+   Test  GTR + CRNN model.
+```
+python GTR-plug/GTR-CRNN/test.py \
+--eval_data data_lmdb_release/evaluation --benchmark_all_eval \
+--Transformation None --FeatureExtraction VGG --SequenceModeling BiLSTM --Prediction CTC \
+--add_GTR True --saved_model saved_models/best_accuracy.pth
+```
+
+2. Train GTR + TRBA model. 
+```
+python GTR-plug/GTR-TRBA/train.py \
+--train_data data_lmdb_release/training --valid_data data_lmdb_release/validation \
+--select_data MJ-ST --batch_ratio 0.5-0.5 \
+--add_GTR True --Transformation TPS --FeatureExtraction ResNet --SequenceModeling BiLSTM --Prediction Attn
+```
+ 
+ Test GTR + TRBA model 
+
+```
+ python GTR-plug/GTR-TRBA/test.py \
+--eval_data data_lmdb_release/evaluation --benchmark_all_eval \
+--Transformation TPS --FeatureExtraction ResNet --SequenceModeling BiLSTM --Prediction Attn \
+--saved_model saved_model/best_accuracy.pth --add_GTR True
+```
+
+3. Train GTR + SRN model
+```
+python GTR-plug/GTR-SRN/train.py \
+--train_data path-to-train-data --valid-data path-to-valid-data --add_GTR True
+```
+ Test GTR + SRN model
+
+```
+python GTR-plug/GTR-SRN/test.py \
+--train_data --valid-data path-to-valid-data --add_GTR True
+```
+
+4. Train GTR + PRENBaseline model
+```
+python GTR-plug/GTR-P-Base/train.py \
+--train_data path-to-train-data --valid-data path-to-valid-data --add_GTR True
+```
+
+ Test GTR + PRENBaseline model.
+```
+python GTR-plug/GTR-P-Base/test.py \
+--train_data path-to-train-data --valid-data path-to-valid-data --add_GTR True
+```
+
+5. Train GTR + ABINet-LV model
+```
+python GTR-plug/GTR-ABINet/main.py \
+--train_data path-to-train-data --valid-data path-to-valid-data --add_GTR True --config=configs/train_abinet.yaml 
+```
+
+ Test GTR + ABINet-LV model.
+```
+python GTR-plug/GTR-ABINet/main.py \
+ --valid-data path-to-valid-data  --add_GTR True --config=configs/train_abinet.yaml 
+```
 
 
 ## Issue
 1. The train and test datasets are uploaded. The pretrain model will be uploaded  and the training code for MT adative framework will be updated soon.
 
-2. This code is only for S-GTR, and other pluggin models will be updated soon. 
+2. This code is for S-GTR and other GTR pluggin methods, and the pluggin models will be updated soon. 
 
 3. To facilitate interested workers to use our model to adapt to other language training, we will provide text guidance in README for other language recognition as soon as possible.
 
