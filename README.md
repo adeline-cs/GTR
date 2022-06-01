@@ -53,13 +53,13 @@ sh test.sh
 
 ## Experiments
 ### Evaluation results on benchmarks
-* You can downlod the benchmark datasets from [OneDrive](https://drive.google.com/file/d/1ws4SmBBvT6cxs41TfSUpe4uhR_U_AzMk/view?usp=sharing).
+* You can downlod the benchmark datasets from [GoogleDrive](https://drive.google.com/file/d/1ws4SmBBvT6cxs41TfSUpe4uhR_U_AzMk/view?usp=sharing).
 
 |Methods |TrainData|  model | IIIT5K | SVT  | IC13 | SVTP  | IC15 |  CUTE  |
 |:--------:|:--------:|:-----------------:|:------:|:----------:|:--------:|:------:|:----------:|:---:|
-|SegBaseline| ST+MJ | [googleDrive](https://drive.google.com/file/d/1vGwF3cWqe6KrKJVqOZhlAyPEPXMSzxDh/view?usp=sharing)  |94.2 |90.8 |93.6 |84.3 |82.0 |87.6|
-|S-GTR| ST+MJ | [googleDrive](https://drive.google.com/file/d/1KIth2T_w_0VaRxTfavaFphNiHEVNBX0T/view?usp=sharing)  |95.8 | 94.1 | 96.8 | 87.9|84.6| 92.3 |
-|S-GTR| ST+MJ+R |OneDrive](soon update)   |97.5 |95.8 |97.8 |90.6 |87.3 |94.7|
+|SegBaseline| ST+MJ | [GoogleDrive](https://drive.google.com/file/d/1vGwF3cWqe6KrKJVqOZhlAyPEPXMSzxDh/view?usp=sharing)  |94.2 |90.8 |93.6 |84.3 |82.0 |87.6|
+|S-GTR| ST+MJ | [GoogleDrive](https://drive.google.com/file/d/1KIth2T_w_0VaRxTfavaFphNiHEVNBX0T/view?usp=sharing)  |95.8 | 94.1 | 96.8 | 87.9|84.6| 92.3 |
+|S-GTR| ST+MJ+R |GoogleDrive](soon update)   |97.5 |95.8 |97.8 |90.6 |87.3 |94.7|
 
 ### Evaluate S-GTR with different settings  
 - Investigate  the  impact  of  different  modules in  S-GTR.
@@ -76,11 +76,11 @@ sh test.sh
 
 |Methods|model| IIIT5K | SVT  | IC13 | SVTP  | IC15 |  CUTE  |
 |:------:|:------:|:------:|:-----:|:---------:|:----------:|:----:|:-----:|
-|GTR+CRNN|[googleDrive](https://drive.google.com/drive/folders/16Q_1OQdd0XKOBB1EK1VBb7Xxe27Jypjh?usp=sharing)|  87.6 | 82.1 | 90.1 | 68.1 | 68.2 | 78.1   |
-|GTR+TRBA|[googleDrive](https://drive.google.com/drive/folders/15WPsuPJDCzhp2SvYZLRj8mAlT3zmoAMW)|93.2 | 90.1 | 94.0 | 80.7 | 76.0 | 82.1|
-|GTR+SRN|[googleDrive](https://drive.google.com/file/d/1ep-taPjrWFx18fE-urWNd3oiuWUBXdUX/view?usp=sharing)| 96.0 | 93.1 | 96.1 | 87.9 | 83.9 | 90.7 |
-|GTR+PRENBaseline|[googleDrive](https://drive.google.com/file/d/1T3OfY1lfzDoYsZpPOwNpYWpYCOizV7bF/view?usp=sharing)| 96.1 | 94.1 | 96.6 | 88.0 | 85.3 | 92.6|
-|GTR+ABINet-LV|OneDrive(soon update)| 96.8 | 94.8  | 97.7  | 89.6   | 86.9  | 93.1   |
+|GTR+CRNN|[GoogleDrive](https://drive.google.com/drive/folders/16Q_1OQdd0XKOBB1EK1VBb7Xxe27Jypjh?usp=sharing)|  87.6 | 82.1 | 90.1 | 68.1 | 68.2 | 78.1   |
+|GTR+TRBA|[GoogleDrive](https://drive.google.com/drive/folders/15WPsuPJDCzhp2SvYZLRj8mAlT3zmoAMW)|93.2 | 90.1 | 94.0 | 80.7 | 76.0 | 82.1|
+|GTR+SRN|[GoogleDrive](https://drive.google.com/file/d/1ep-taPjrWFx18fE-urWNd3oiuWUBXdUX/view?usp=sharing)| 96.0 | 93.1 | 96.1 | 87.9 | 83.9 | 90.7 |
+|GTR+PRENBaseline|[GoogleDrive](https://drive.google.com/file/d/1T3OfY1lfzDoYsZpPOwNpYWpYCOizV7bF/view?usp=sharing)| 96.1 | 94.1 | 96.6 | 88.0 | 85.3 | 92.6|
+|GTR+ABINet-LV|GoogleDrive(soon update)| 96.8 | 94.8  | 97.7  | 89.6   | 86.9  | 93.1   |
 
 
 1. Train GTR + CRNN model
