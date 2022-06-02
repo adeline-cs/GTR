@@ -80,7 +80,7 @@ sh test.sh
 |GTR+TRBA|[GoogleDrive](https://drive.google.com/drive/folders/15WPsuPJDCzhp2SvYZLRj8mAlT3zmoAMW)|93.2 | 90.1 | 94.0 | 80.7 | 76.0 | 82.1|
 |GTR+SRN|[GoogleDrive](https://drive.google.com/file/d/1ep-taPjrWFx18fE-urWNd3oiuWUBXdUX/view?usp=sharing)| 96.0 | 93.1 | 96.1 | 87.9 | 83.9 | 90.7 |
 |GTR+PRENBaseline|[GoogleDrive](https://drive.google.com/file/d/1T3OfY1lfzDoYsZpPOwNpYWpYCOizV7bF/view?usp=sharing)| 96.1 | 94.1 | 96.6 | 88.0 | 85.3 | 92.6|
-|GTR+ABINet-LV|GoogleDrive(soon update)| 96.8 | 94.8  | 97.7  | 89.6   | 86.9  | 93.1   |
+|GTR+ABINet-LV|[GoogleDrive](https://drive.google.com/drive/folders/1lT6nUP8tYt08tWe6R8VsLtEdJbhGeVJ6?usp=sharing)| 96.8 | 94.8  | 97.7  | 89.6   | 86.9  | 93.1   |
 
 
 1. Train GTR + CRNN model
