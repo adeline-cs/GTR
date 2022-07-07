@@ -59,7 +59,7 @@ sh test.sh
 |:--------:|:--------:|:-----------------:|:------:|:----------:|:--------:|:------:|:----------:|:---:|
 |SegBaseline| ST+MJ | [GoogleDrive](https://drive.google.com/file/d/1vGwF3cWqe6KrKJVqOZhlAyPEPXMSzxDh/view?usp=sharing)  |94.2 |90.8 |93.6 |84.3 |82.0 |87.6|
 |S-GTR| ST+MJ | [GoogleDrive](https://drive.google.com/file/d/1KIth2T_w_0VaRxTfavaFphNiHEVNBX0T/view?usp=sharing)  |95.8 | 94.1 | 96.8 | 87.9|84.6| 92.3 |
-|S-GTR| ST+MJ+R |GoogleDrive](soon update)   |97.5 |95.8 |97.8 |90.6 |87.3 |94.7|
+|S-GTR| ST+MJ+R |[Baidu](https://pan.baidu.com/s/1iegp1vA_CXtKiHU0Vc_zMA) (key:e95m)   |97.5 |95.8 |97.8 |90.6 |87.3 |94.7|
 
 ### Evaluate S-GTR with different settings  
 - Investigate  the  impact  of  different  modules in  S-GTR.
@@ -154,13 +154,13 @@ python GTR-plug/GTR-ABINet/main.py \
 
 
 ## Issue
-1. The train and test datasets are uploaded. The pretrain model will be uploaded  and the training code for MT adative framework will be updated soon.
+1. The train and test datasets are uploaded. The pretrain model will be uploaded  and the training code for MT adaptive framework will be updated soon.
 
 2. This code is for S-GTR and other GTR pluggin methods, and the pluggin models will be updated soon. 
 
 3. To facilitate interested workers to use our model to adapt to other language training, we will provide text guidance in README for other language recognition as soon as possible.
 
-4. We will update the details of the visual recognition model and provide guidance code to generate relevant feature maps for the question in issue.
+4. We will update the details of the visual recognition model,  and provide guidance code to generate relevant feature maps for the question in issue.
 
 ## Citation
 Please consider citing this paper if you find it useful in your research. 
