@@ -2,7 +2,7 @@ from __future__ import absolute_import
 import sys
 import tensorflow as tf
 import torch
-#from torch.utils.tensorboard import SummaryWriter
+from torch.utils.tensorboard import SummaryWriter
 from ...config import get_args
 import os
 import errno
@@ -79,6 +79,7 @@ class TFLogger(object):
     if log_dir is not None:
       mkdir_if_missing(log_dir)
     self.writer = tf.Summary.FileWriter(log_dir)
+
   def scalar_summary(self, tag, value, step):
     summary = tf.Summary(value = [tf.Summary.Value(tag = tag, simple_value = value)])
     self.writer.add_summary(summary, step)
